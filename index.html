@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#082f49"><meta name="description" content="Probashi Pay demo remittance rates and account dashboard">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Probashi Pay</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brandmark">P</div><div><strong>PROBASHI PAY</strong><small>প্রবাসী পে ট্রান্সফার লিমিটেড</small></div><button id="logoutBtn" class="ghost hidden">লগআউট</button></header>
+<main>
+<section id="loginView" class="login-wrap">
+  <div class="hero"><span class="eyebrow">সহজ • নিরাপদ • স্বচ্ছ</span><h1>আপনার প্রবাসী আয়ের<br><em>স্মার্ট সঙ্গী</em></h1><p>আজকের রেট দেখুন, হিসাব রাখুন, সেবার তথ্য পরিচালনা করুন।</p></div>
+  <form id="loginForm" class="panel login-panel"><h2>অ্যাকাউন্টে প্রবেশ</h2><label>ইমেইল<input id="email" type="email" placeholder="you@example.com" required></label><label>পাসওয়ার্ড<input id="password" type="password" minlength="4" placeholder="কমপক্ষে ৪ অক্ষর" required></label><button class="primary full" type="submit">লগইন করুন</button><p class="hint">ডেমো: যেকোনো ইমেইল ও ৪+ অক্ষরের পাসওয়ার্ড দিন। অ্যাডমিন ডেমো খুলতে ইমেইলে <b>admin</b> শব্দটি রাখুন।</p></form>
+</section>
+<section id="appView" class="hidden">
+  <div class="welcome"><div><span class="eyebrow">ড্যাশবোর্ড</span><h1>স্বাগতম, <span id="userLabel">গ্রাহক</span></h1><p>আপনার প্রয়োজনীয় তথ্য এক জায়গায়।</p></div><div class="date-chip" id="todayLabel"></div></div>
+  <div class="stats"><article class="stat"><span>দেশের রেট</span><strong id="rateCount">5</strong><small>রেট তালিকায়</small></article><article class="stat"><span>মোট রেকর্ড</span><strong id="txnCount">0</strong><small>ডেমো হিসাব</small></article><article class="stat"><span>মোট প্রাপ্য (ডেমো)</span><strong id="totalAmount">৳০</strong><small>নমুনা হিসাব, প্রকৃত ব্যালেন্স নয়</small></article></div>
+  <section class="panel"><div class="section-head"><div><span class="eyebrow">এক্সচেঞ্জ রেট</span><h2>আজকের রেট</h2></div><span class="pill">ডেমো ডেটা</span></div><div class="table-wrap"><table><thead><tr><th>দেশ</th><th>মুদ্রা</th><th>১ ইউনিট = টাকা</th></tr></thead><tbody id="ratesBody"></tbody></table></div><p class="hint">প্রদর্শিত রেটগুলো নমুনা। টাকা পাঠানোর আগে অনুমোদিত উৎস থেকে যাচাই করুন।</p></section>
+  <section class="panel"><div class="section-head"><div><span class="eyebrow">হিসাব ব্যবস্থাপনা</span><h2>নতুন হিসাবের রেকর্ড</h2></div></div><form id="txnForm" class="txn-form"><label>গ্রাহক/রেফারেন্স<input id="txnName" required placeholder="নাম বা রেফারেন্স"></label><label>পরিমাণ (BDT)<input id="txnAmount" required type="number" min="1" step="1" placeholder="যেমন 5000"></label><label>অবস্থা<select id="txnStatus"><option>Pending</option><option>Completed</option><option>Cancelled</option></select></label><button class="primary" type="submit">রেকর্ড যোগ করুন</button></form><div class="table-wrap"><table><thead><tr><th>রেফারেন্স</th><th>পরিমাণ</th><th>অবস্থা</th><th>তারিখ</th></tr></thead><tbody id="txnBody"></tbody></table></div><p class="hint">এটি শুধু স্থানীয় ডেমো রেকর্ড; কোনো অর্থ স্থানান্তর হয় না।</p></section>
+  <section id="adminPanel" class="panel hidden"><div class="section-head"><div><span class="eyebrow">শুধু ডেমো অ্যাডমিন</span><h2>রেট সম্পাদনা</h2></div><span class="pill admin-pill">ADMIN DEMO</span></div><form id="rateForm" class="rate-form"><label>দেশ<select id="rateCountry"></select></label><label>নতুন রেট (BDT)<input id="rateValue" type="number" min="0.01" step="0.01" required></label><button class="primary" type="submit">রেট আপডেট</button></form><p class="hint">এই ডেমোতে অ্যাডমিন অনুমতি নিরাপদ সার্ভার দিয়ে যাচাই হয় না। প্রকাশের আগে আসল authentication ও role-based access যুক্ত করতে হবে।</p></section>
+</section>
+</main>
+<footer>© <span id="year"></span> Probashi Pay · নিরাপদ সেবার জন্য অনুমোদিত ইন্টিগ্রেশন প্রয়োজন</footer>
+<script src="app.js"></script>
+</body></html>

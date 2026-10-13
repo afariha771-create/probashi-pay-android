@@ -1,0 +1,8 @@
+{
+  "appId": "com.probashipay.app",
+  "appName": "Probashi Pay",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  }
+}
